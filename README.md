@@ -4,4 +4,4 @@
 Dollars is good
 Always think positive
 always be aware of your surroundings
-The devops is good
+
