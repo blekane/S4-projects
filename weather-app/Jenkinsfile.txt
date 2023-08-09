@@ -39,7 +39,7 @@ pipeline {
 
         success {
             // Actions to take if the pipeline succeeds
-            echo 'Pipeline succeeded!'
+            echo 'Pipeline is succeeded!'
         }
 
         failure {
