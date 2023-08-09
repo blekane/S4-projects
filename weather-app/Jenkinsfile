@@ -1,0 +1,50 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your source code from version control (e.g., Git)
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                // Install dependencies and build your application
+                sh 'npm install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                // Run tests for your application
+                sh 'npm test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                // Deploy your application to a target environment
+                sh 'npm deploy'
+            }
+        }
+    }
+
+    post {
+        always {
+            // Archive artifacts or perform cleanup actions here
+            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+        }
+
+        success {
+            // Actions to take if the pipeline succeeds
+            echo 'Pipeline succeeded!'
+        }
+
+        failure {
+            // Actions to take if the pipeline fails
+            echo 'Pipeline failed!'
+        }
+    }
+}
