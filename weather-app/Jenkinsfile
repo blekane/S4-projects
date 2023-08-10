@@ -22,23 +22,13 @@ pipeline {
         stage('Build') {
             steps {
                 // Install dependencies and build your application
-                sh 'npm install'
+                sh 'ls'
             }
         }
 
-        stage('Test') {
-            steps {
-                // Run tests for your application
-                sh 'npm test'
-            }
-        }
+       
 
-        stage('Deploy') {
-            steps {
-                // Deploy your application to a target environment
-                sh 'npm deploy'
-            }
-        }
+        
     }
 
     post {
