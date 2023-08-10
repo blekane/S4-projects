@@ -2,6 +2,19 @@ pipeline {
     agent any
 
     stages {
+
+
+         stage('Build') {
+            steps {
+                // Install dependencies and build your application
+                sh '''
+                ls
+                cat sonar-project.properties
+                
+                '''
+
+            }
+        }
          stage('SonarQube analysis') {
             agent {
                 docker {
