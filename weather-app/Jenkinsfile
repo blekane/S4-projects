@@ -4,7 +4,7 @@ pipeline {
     stages {
 
 
-         stage('Build') {
+         stage('Builddddd') {
             steps {
                 // Install dependencies and build your application
                 sh '''
